@@ -1,8 +1,15 @@
-import "./App.css";
-import logo from "./logo.png";
+import { Login, Signup } from "./features";
+import { Route, Routes } from "react-router-dom";
 
 function App() {
-  return <div className="App"></div>;
+  return (
+    <div className="App">
+      <Routes>
+        {/* Temporary path for login */}
+        <Route path="/" element={<Login />} />
+      </Routes>
+    </div>
+  );
 }
 
 export default App;
