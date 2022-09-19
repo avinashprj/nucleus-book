@@ -38,6 +38,14 @@ export const Signup = () => (
           <div className="relative">
             <input
               className="p-2 rounded-xl border w-full"
+              type="text"
+              name="username"
+              placeholder="Enter UserName"
+            />
+          </div>
+          <div className="relative">
+            <input
+              className="p-2 rounded-xl border w-full"
               type="password"
               name="password"
               placeholder="Enter Password"
