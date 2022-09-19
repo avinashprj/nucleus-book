@@ -5,6 +5,7 @@
   "dependencies": {
     "@fontsource/sen": "^4.5.9",
     "@reduxjs/toolkit": "^1.8.5",
+    "axios": "^0.27.2",
     "dayjs": "^1.11.5",
     "jwt-decode": "^3.1.2",
     "jwt-encode": "^1.0.1",
@@ -12,6 +13,7 @@
     "mockman-js": "^1.1.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-icons": "^4.4.0",
     "react-redux": "^8.0.2",
     "react-router": "^6.4.0",
     "react-router-dom": "^6.4.0",
@@ -40,9 +42,18 @@
     ]
   },
   "devDependencies": {
+    "@babel/eslint-parser": "^7.19.1",
     "autoprefixer": "^10.4.11",
+    "eslint": "^8.2.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.31.8",
+    "eslint-plugin-react-hooks": "^4.3.0",
     "postcss": "^8.4.16",
-    "react-icons": "^4.4.0",
+    "prettier": "^2.7.1",
     "tailwindcss": "^3.1.8"
   }
 }

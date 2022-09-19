@@ -1,6 +1,6 @@
 import { Response } from "miragejs";
-import { formatDate, requiresAuth } from "../utils/authUtils";
 import { v4 as uuid } from "uuid";
+import { formatDate, requiresAuth } from "../utils/authUtils";
 
 /**
  * All the routes related to post are present here.
@@ -21,7 +21,7 @@ export const getAllpostsHandler = function () {
  * */
 
 export const getPostHandler = function (schema, request) {
-  const postId = request.params.postId;
+  const { postId } = request.params;
   try {
     const post = schema.posts.findBy({ _id: postId }).attrs;
     return new Response(200, {}, { post });
@@ -122,7 +122,7 @@ export const editPostHandler = function (schema, request) {
         }
       );
     }
-    const postId = request.params.postId;
+    const { postId } = request.params;
     const { postData } = JSON.parse(request.requestBody);
     let post = schema.posts.findBy({ _id: postId }).attrs;
     if (post.username !== user.username) {
@@ -167,7 +167,7 @@ export const likePostHandler = function (schema, request) {
         }
       );
     }
-    const postId = request.params.postId;
+    const { postId } = request.params;
     const post = schema.posts.findBy({ _id: postId }).attrs;
     if (post.likes.likedBy.some((currUser) => currUser._id === user._id)) {
       return new Response(
@@ -213,7 +213,7 @@ export const dislikePostHandler = function (schema, request) {
         }
       );
     }
-    const postId = request.params.postId;
+    const { postId } = request.params;
     let post = schema.posts.findBy({ _id: postId }).attrs;
     if (post.likes.likeCount === 0) {
       return new Response(
@@ -266,8 +266,8 @@ export const deletePostHandler = function (schema, request) {
         }
       );
     }
-    const postId = request.params.postId;
-    let post = schema.posts.findBy({ _id: postId }).attrs;
+    const { postId } = request.params;
+    const post = schema.posts.findBy({ _id: postId }).attrs;
     if (post.username !== user.username) {
       return new Response(
         400,

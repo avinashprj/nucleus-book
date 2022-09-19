@@ -78,10 +78,10 @@ export function makeServer({ environment = "development" } = {}) {
       this.post("/posts/like/:postId", likePostHandler.bind(this));
       this.post("/posts/dislike/:postId", dislikePostHandler.bind(this));
 
-      //post comments routes (public)
+      // post comments routes (public)
       this.get("/comments/:postId", getPostCommentsHandler.bind(this));
 
-      //post comments routes (private)
+      // post comments routes (private)
       this.post("/comments/add/:postId", addPostCommentHandler.bind(this));
       this.post(
         "/comments/edit/:postId/:commentId",

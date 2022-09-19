@@ -1,6 +1,7 @@
 import { v4 as uuid } from "uuid";
 import { Response } from "miragejs";
 import { formatDate } from "../utils/authUtils";
+
 const sign = require("jwt-encode");
 
 /**
@@ -18,7 +19,7 @@ export const signupHandler = function (schema, request) {
   const { username, password, ...rest } = JSON.parse(request.requestBody);
   try {
     // check if username already exists
-    const foundUser = schema.users.findBy({ username: username });
+    const foundUser = schema.users.findBy({ username });
     if (foundUser) {
       return new Response(
         422,
@@ -67,7 +68,7 @@ export const signupHandler = function (schema, request) {
 export const loginHandler = function (schema, request) {
   const { username, password } = JSON.parse(request.requestBody);
   try {
-    const foundUser = schema.users.findBy({ username: username });
+    const foundUser = schema.users.findBy({ username });
     if (!foundUser) {
       return new Response(
         404,
