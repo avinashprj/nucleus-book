@@ -15,6 +15,8 @@ module.exports = {
 
   plugins: ["react", "prettier", "react-hooks"],
   rules: {
+    "prefer-regex-literals": "off",
+    "react/prop-types": "off",
     camelcase: "off",
     "no-debugger": 0,
     "no-use-before-define": "off",
@@ -53,7 +55,7 @@ module.exports = {
         props: false,
       },
     ],
-    "no-console": 1,
+    "no-console": 0,
     "import/prefer-default-export": 0,
     import: 0,
     "func-names": 0,
