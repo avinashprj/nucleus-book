@@ -22,44 +22,113 @@ export const Signup = () => (
         <p className="text-xs mt-4 text-primary">
           If you are already a member, easily log in
         </p>
-        <form action className="flex flex-col gap-4">
-          <input
-            className="p-2 mt-8 rounded-xl border"
-            type="text"
-            name="text"
-            placeholder="Full Name"
-          />
-          <input
-            className="p-2  rounded-xl border"
-            type="email"
-            name="email"
-            placeholder="Email"
-          />
-          <div className="relative">
-            <input
-              className="p-2 rounded-xl border w-full"
-              type="text"
-              name="username"
-              placeholder="Enter UserName"
-            />
+        <form action className="flex flex-col gap-2">
+          <div className="flex flex-col mt-4">
+            <label
+              htmlFor="name"
+              className="mb-1 text-xs sm:text-sm tracking-wide text-gray-600"
+            >
+              First Name
+            </label>
+            <div className="relative">
+              <input
+                id="name"
+                name="name"
+                type="text"
+                placeholder="First Name"
+                // value=""
+                className="text-sm sm:text-base relative w-full border rounded-xl placeholder-gray-400 focus:border-indigo-400 focus:outline-none p-2  border-red-500"
+              />
+            </div>
+            <span className="flex items-center font-medium tracking-wide text-red-500 text-xs mt-1 ml-1">
+              Invalid first Name field !
+            </span>
           </div>
-          <div className="relative">
-            <input
-              className="p-2 rounded-xl border w-full"
-              type="password"
-              name="password"
-              placeholder="Enter Password"
-            />
+          <div className="flex flex-col">
+            <label
+              htmlFor="name"
+              className="mb-1 text-xs sm:text-sm tracking-wide text-gray-600"
+            >
+              Last Name
+            </label>
+            <div className="relative">
+              <input
+                id="name"
+                name="name"
+                type="text"
+                placeholder="Last Name"
+                // value=""
+                className="text-sm sm:text-base relative w-full border rounded-xl placeholder-gray-400 focus:border-indigo-400 focus:outline-none p-2  border-red-500"
+              />
+            </div>
+            <span className="flex items-center font-medium tracking-wide text-red-500 text-xs mt-1 ml-1">
+              Invalid Last Name field !
+            </span>
           </div>
-          <div className="relative">
-            <input
-              className="p-2 rounded-xl border w-full"
-              type="password"
-              name="password"
-              placeholder="Confirm Password"
-            />
+          <div className="flex flex-col">
+            <label
+              htmlFor="name"
+              className="mb-1 text-xs sm:text-sm tracking-wide text-gray-600"
+            >
+              Email
+            </label>
+            <div className="relative">
+              <input
+                id="name"
+                name="email"
+                type="email"
+                placeholder="Email"
+                // value=""
+                className="text-sm sm:text-base relative w-full border rounded-xl placeholder-gray-400 focus:border-indigo-400 focus:outline-none p-2  border-red-500"
+              />
+            </div>
+            <span className="flex items-center font-medium tracking-wide text-red-500 text-xs mt-1 ml-1">
+              Invalid Email address!
+            </span>
+          </div>
+          <div className="flex flex-col">
+            <label
+              htmlFor="name"
+              className="mb-1 text-xs sm:text-sm tracking-wide text-gray-600"
+            >
+              Username
+            </label>
+            <div className="relative">
+              <input
+                id="name"
+                name="name"
+                type="text"
+                placeholder="User Name"
+                // value=""
+                className="text-sm sm:text-base relative w-full border rounded-xl placeholder-gray-400 focus:border-indigo-400 focus:outline-none p-2  border-red-500"
+              />
+            </div>
+            <span className="flex items-center font-medium tracking-wide text-red-500 text-xs mt-1 ml-1">
+              Invalid User Name field !
+            </span>
           </div>
 
+          <div className="flex flex-col">
+            <label
+              htmlFor="password"
+              className="mb-1 text-xs sm:text-sm tracking-wide text-gray-600"
+            >
+              Password
+            </label>
+            <div className="relative">
+              <input
+                id="password"
+                name="password"
+                type="password"
+                placeholder="Enter Password"
+                // value=""
+                className="text-sm sm:text-base relative w-full border rounded-xl placeholder-gray-400 focus:border-indigo-400 focus:outline-none p-2  border-red-500"
+              />
+            </div>
+            <span className="flex items-center font-medium tracking-wide text-red-500 text-xs mt-1 ml-1">
+              Invalid password field !
+            </span>
+          </div>
           <button
             type="button"
             className="bg-primary rounded-xl text-white py-2 hover:scale-105 duration-300"
@@ -82,7 +151,7 @@ export const Signup = () => (
         <div className="mt-3 text-xs flex justify-between items-center text-primary">
           <p>Already have an account?</p>
           <Link
-            to="/"
+            to="/login"
             type="button"
             className="py-2 px-5 bg-white border rounded-xl hover:scale-110 duration-300"
           >

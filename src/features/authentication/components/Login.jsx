@@ -14,21 +14,47 @@ export const Login = () => (
           If you are already a member, easily log in
         </p>
         <form action className="flex flex-col gap-4">
-          <input
-            className="p-2 mt-8 rounded-xl border"
-            type="email"
-            name="email"
-            placeholder="Email"
-          />
-          <div className="relative">
-            <input
-              className="p-2 rounded-xl border w-full"
-              type="password"
-              name="password"
-              placeholder="Password"
-            />
-            <AiOutlineEye className="bi bi-eye absolute top-1/2 right-3 -translate-y-1/2" />
-            {/* <AiOutlineEyeInvisible className="bi bi-eye absolute top-1/2 right-3 -translate-y-1/2"></AiOutlineEyeInvisible> */}
+          <div className="flex flex-col mt-8">
+            <label
+              htmlFor="name"
+              className="mb-1 text-xs sm:text-sm tracking-wide text-gray-600"
+            >
+              Username
+            </label>
+            <div className="relative">
+              <input
+                id="name"
+                name="name"
+                type="text"
+                placeholder="User Name"
+                // value=""
+                className="text-sm sm:text-base relative w-full border rounded-xl placeholder-gray-400 focus:border-indigo-400 focus:outline-none p-2  border-red-500"
+              />
+            </div>
+            <span className="flex items-center font-medium tracking-wide text-red-500 text-xs mt-1 ml-1">
+              Invalid User Name field !
+            </span>
+          </div>
+          <div className="flex flex-col">
+            <label
+              htmlFor="password"
+              className="mb-1 text-xs sm:text-sm tracking-wide text-gray-600"
+            >
+              Password
+            </label>
+            <div className="relative">
+              <input
+                id="password"
+                name="password"
+                type="password"
+                placeholder="Enter Password"
+                // value=""
+                className="text-sm sm:text-base relative w-full border rounded-xl placeholder-gray-400 focus:border-indigo-400 focus:outline-none p-2  border-red-500"
+              />
+            </div>
+            <span className="flex items-center font-medium tracking-wide text-red-500 text-xs mt-1 ml-1">
+              Invalid password field !
+            </span>
           </div>
           <button
             type="button"
