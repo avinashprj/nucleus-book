@@ -4,7 +4,6 @@ import { Login, Signup } from "./features";
 import "react-toastify/dist/ReactToastify.css";
 
 function App() {
-  console.log("EHLLO");
   return (
     <div className="App">
       <Routes>
