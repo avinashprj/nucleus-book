@@ -44,7 +44,7 @@ module.exports = {
     ],
     "arrow-body-style": [2, "as-needed"],
     "no-unused-expressions": [
-      2,
+      1,
       {
         allowTaggedTemplates: true,
       },
