@@ -3,7 +3,7 @@ import { toast } from "react-toastify";
 import { postLoginData, postSignupData } from "../../serverCalls";
 
 export const loginUser = createAsyncThunk(
-  "authenticate/loginUser",
+  "api/auth/login",
   async ({ username, password }, { rejectWithValue }) => {
     try {
       const loginResponse = await postLoginData(username, password);
