@@ -1,7 +1,5 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import { createRoot } from "react-dom/client";
-
 import "./index.css";
 import "@fontsource/sen/400.css";
 import "@fontsource/sen/700.css";
