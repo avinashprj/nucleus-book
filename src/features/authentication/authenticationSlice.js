@@ -1,6 +1,12 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { toast } from "react-toastify";
-import { postLoginData, postSignupData } from "../../serverCalls";
+import {
+  addBookmarkInServer,
+  editUser,
+  postLoginData,
+  postSignupData,
+  removeBookmarkFromServer,
+} from "../../serverCalls";
 
 export const loginUser = createAsyncThunk(
   "api/auth/login",
@@ -28,11 +34,61 @@ export const signupUser = createAsyncThunk(
     }
   }
 );
+
+export const editUserProfile = createAsyncThunk(
+  "authenticate/editUserProfile",
+  async ({ userDetails, authToken }, { rejectWithValue }) => {
+    try {
+      const resp = await editUser(userDetails, authToken);
+      return resp.data.user;
+    } catch (error) {
+      toast.error("Couldn't Edit Profile! Please try again.");
+      console.error(error.response.data);
+      return rejectWithValue(error.response.data);
+    }
+  }
+);
+
+export const addBookmark = createAsyncThunk(
+  "authenticate/addBookmark",
+  async ({ postId, authToken }, { rejectWithValue }) => {
+    try {
+      const resp = await addBookmarkInServer(postId, authToken);
+      console.log(
+        "🚀 ~ file: authenticationSlice.js ~ line 57 ~ resp",
+        resp.data
+      );
+
+      return resp.data.bookmarks;
+    } catch (error) {
+      toast.error("Couldn't Add to Bookmarks.");
+      console.error(error.response.data);
+      return rejectWithValue(error.response.data);
+    }
+  }
+);
+
+export const removeBookmark = createAsyncThunk(
+  "authenticate/removeBookmark",
+  async ({ postId, authToken }, { rejectWithValue }) => {
+    try {
+      const resp = await removeBookmarkFromServer(postId, authToken);
+      return resp.data.bookmarks;
+    } catch (error) {
+      toast.error("Couldn't remove from Bookmarks.");
+      console.error(error.response.data);
+      return rejectWithValue(error.response.data);
+    }
+  }
+);
 const initialState = {
   authToken: localStorage.getItem("authToken") ?? "",
   authUser: JSON.parse(localStorage.getItem("authUser")) ?? {},
   authStatus: "idle",
   authError: null,
+  editProfileStatus: "idle",
+  bookmarkStatus: "idle",
+  bookmarkError: null,
 };
 
 const authenticationSlice = createSlice({
@@ -73,6 +129,38 @@ const authenticationSlice = createSlice({
       state.authUser = action.payload.createdUser;
       localStorage.setItem("authToken", state.authToken);
       localStorage.setItem("authUser", JSON.stringify(state.authUser));
+    },
+    [editUserProfile.pending]: (state, action) => {
+      state.editProfileStatus = "pending";
+    },
+    [editUserProfile.fulfilled]: (state, action) => {
+      state.authUser = action.payload;
+    },
+    [editUserProfile.rejected]: (state, action) => {
+      state.authError = action.payload;
+    },
+    [addBookmark.pending]: (state, action) => {
+      state.bookmarkStatus = "pending";
+    },
+    [addBookmark.fulfilled]: (state, action) => {
+      console.log(state.authUser.bookmarks, "HELLO", action);
+      state.authUser.bookmarks = action.payload;
+      state.bookmarkStatus = "fulfilled";
+    },
+    [addBookmark.rejected]: (state, action) => {
+      state.bookmarkStatus = "rejected";
+      state.bookmarkError = action.payload;
+    },
+    [removeBookmark.pending]: (state, action) => {
+      state.bookmarkStatus = "pending";
+    },
+    [removeBookmark.fulfilled]: (state, action) => {
+      state.authUser.bookmarks = action.payload;
+      state.bookmarkStatus = "fulfilled";
+    },
+    [removeBookmark.rejected]: (state, action) => {
+      state.bookmarkStatus = "rejected";
+      state.bookmarkError = action.payload;
     },
   },
 });
