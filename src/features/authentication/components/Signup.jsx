@@ -3,6 +3,7 @@ import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import { FcGoogle } from "react-icons/fc";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
+// import { GoogleLogin } from "react-google-login";
 import { useSignupHandler } from "../hooks/useSignupHandler";
 
 export const Signup = () => {
@@ -25,23 +26,30 @@ export const Signup = () => {
       navigate(location?.state?.from?.pathname || "/", { replace: true });
   }, [authToken]);
 
+  const onSuccess = ({ profileObj }) => {
+    console.log("success:", profileObj);
+  };
+  const onFailure = (err) => {
+    console.log("failed:", err);
+  };
+
   return (
-    <section className="bg-gray-50 min-h-screen flex items-center justify-center">
+    <section className="animate-gradient bg-gray-50 min-h-screen flex items-center justify-center">
       {/* login container */}
       <div className="bg-gray-100 flex rounded-2xl shadow-lg max-w-4xl p-5 items-center">
         {/* Image */}
         <div className="md:block hidden w-1/2">
           <img
             className="rounded-2xl"
-            src="https://res.cloudinary.com/dwmd1yjww/image/upload/v1663515628/pexels-linda-ellershein-3127880_hc2fqx.jpg"
+            src="https://res.cloudinary.com/avinashprj/image/upload/v1663515628/pexels-linda-ellershein-3127880_hc2fqx.jpg"
             alt="signup"
           />
         </div>
         {/* form */}
 
         <div className="md:w-1/2 px-8 md:px-16">
-          <h2 className="font-bold text-2xl text-primary">Signup</h2>
-          <p className="text-xs mt-4 text-primary">
+          <h2 className="font-bold text-2xl text-dim-primary">Signup</h2>
+          <p className="text-xs mt-4 text-dim-primary">
             If you are already a member, easily log in
           </p>
           <form
@@ -204,7 +212,7 @@ export const Signup = () => {
             </div>
             <button
               type="submit"
-              className="bg-primary rounded-xl text-white py-2 hover:scale-105 duration-300"
+              className="bg-dim-primary rounded-xl text-dim-white py-2 hover:scale-105 duration-300"
             >
               Signup
             </button>
@@ -214,19 +222,32 @@ export const Signup = () => {
             <p className="text-center text-sm">OR</p>
             <hr className="border-gray-400" />
           </div>
-          <button
-            type="button"
-            className="bg-white border py-2 w-full rounded-xl mt-5 flex justify-center items-center text-sm hover:scale-105 duration-300 text-primary"
-          >
-            <FcGoogle className="mr-3 text-[1.25rem]" />
-            Signup with Google
-          </button>
-          <div className="mt-3 text-xs flex justify-between items-center text-primary">
+
+          {/* <GoogleLogin
+            clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}
+            buttonText="Sign in with Google"
+            render={(renderProps) => (
+              <button
+                type="button"
+                onClick={renderProps.onClick}
+                disabled={renderProps.disabled}
+                className="bg-dim-white border py-2 w-full rounded-xl mt-5 flex justify-center items-center text-sm hover:scale-105 duration-300 text-dim-primary"
+              >
+                <FcGoogle className="mr-3 text-[1.25rem]" />
+                Signup with Google
+              </button>
+            )}
+            onSuccess={onSuccess}
+            onFailure={onFailure}
+            cookiePolicy="single_host_origin"
+            // isSignedIn
+          /> */}
+          <div className="mt-3 text-xs flex justify-between items-center text-dim-primary">
             <p>Already have an account?</p>
             <Link
               to="/login"
               type="button"
-              className="py-2 px-5 bg-white border rounded-xl hover:scale-110 duration-300"
+              className="py-2 px-5 bg-dim-white border rounded-xl hover:scale-110 duration-300"
             >
               Login
             </Link>
