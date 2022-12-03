@@ -14,7 +14,7 @@ export const Footer = () => (
           </h5>
           <div className="mt-6 lg:mb-0 mb-6">
             <button
-              className="bg-white text-twitter shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
+              className="bg-dim-white text-dim-twitter shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
               type="button"
             >
               <a
@@ -26,7 +26,7 @@ export const Footer = () => (
               </a>
             </button>
             <button
-              className="bg-white shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
+              className="bg-dim-white shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
               type="button"
             >
               <a
@@ -39,7 +39,7 @@ export const Footer = () => (
             </button>
             <button
               href="https://linkedin.com/in/avinash-prajapati"
-              className="bg-white text-linkedin shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
+              className="bg-dim-white text-linkedin shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
               type="button"
             >
               <a
@@ -51,7 +51,7 @@ export const Footer = () => (
               </a>
             </button>
             <button
-              className="bg-white shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2 text-pink"
+              className="bg-dim-white shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2 text-pink"
               type="button"
             >
               <a
@@ -73,7 +73,7 @@ export const Footer = () => (
               <ul className="list-unstyled">
                 <li>
                   <a
-                    className="text-gray-800 hover:text-primary font-semibold block pb-2 text-sm"
+                    className="text-gray-800 hover:text-dim-primary font-semibold block pb-2 text-sm"
                     href="https://avinashprajapati.me"
                   >
                     About Us
@@ -81,7 +81,7 @@ export const Footer = () => (
                 </li>
                 <li>
                   <a
-                    className="text-gray-800 hover:text-primary font-semibold block pb-2 text-sm"
+                    className="text-gray-800 hover:text-dim-primary font-semibold block pb-2 text-sm"
                     href="https://avinashprj.hashnode.dev"
                   >
                     Blog
@@ -89,7 +89,7 @@ export const Footer = () => (
                 </li>
                 <li>
                   <a
-                    className="text-gray-800 hover:text-primary font-semibold block pb-2 text-sm"
+                    className="text-gray-800 hover:text-dim-primary font-semibold block pb-2 text-sm"
                     href="https://www.github.com/avinashprj/nucleus-book"
                   >
                     Github
@@ -97,7 +97,7 @@ export const Footer = () => (
                 </li>
                 <li>
                   <a
-                    className="text-gray-800 hover:text-primary font-semibold block pb-2 text-sm"
+                    className="text-gray-800 hover:text-dim-primary font-semibold block pb-2 text-sm"
                     href="/"
                   >
                     Free Products
@@ -112,7 +112,7 @@ export const Footer = () => (
               <ul className="list-unstyled">
                 <li>
                   <a
-                    className="text-gray-800 hover:text-primary font-semibold block pb-2 text-sm"
+                    className="text-gray-800 hover:text-dim-primary font-semibold block pb-2 text-sm"
                     href="/"
                   >
                     MIT License
@@ -120,7 +120,7 @@ export const Footer = () => (
                 </li>
                 <li>
                   <a
-                    className="text-gray-800 hover:text-primary font-semibold block pb-2 text-sm"
+                    className="text-gray-800 hover:text-dim-primary font-semibold block pb-2 text-sm"
                     href="/"
                   >
                     Terms &amp; Conditions
@@ -128,7 +128,7 @@ export const Footer = () => (
                 </li>
                 <li>
                   <a
-                    className="text-gray-800 hover:text-primary font-semibold block pb-2 text-sm"
+                    className="text-gray-800 hover:text-dim-primary font-semibold block pb-2 text-sm"
                     href="/"
                   >
                     Privacy Policy
@@ -136,7 +136,7 @@ export const Footer = () => (
                 </li>
                 <li>
                   <a
-                    className="text-gray-800 hover:text-primary font-semibold block pb-2 text-sm"
+                    className="text-gray-800 hover:text-dim-primary font-semibold block pb-2 text-sm"
                     href="mailto:avinashprajapati914@gmail.com"
                   >
                     Contact Us
