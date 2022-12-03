@@ -15,6 +15,7 @@ module.exports = {
 
   plugins: ["react", "prettier", "react-hooks"],
   rules: {
+    "no-nested-ternary": 0,
     "prefer-regex-literals": "off",
     "react/prop-types": "off",
     camelcase: "off",
