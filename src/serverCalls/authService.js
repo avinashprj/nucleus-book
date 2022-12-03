@@ -13,5 +13,36 @@ const postSignupData = (formData) =>
     website: "",
     avatarURL: "",
   });
+const editUser = (userData, authorization) =>
+  axios.post(
+    "/api/users/edit",
+    { userData },
+    {
+      headers: { authorization },
+    }
+  );
+const addBookmarkInServer = (postId, authorization) =>
+  axios.post(
+    `/api/users/bookmark/${postId}`,
+    {},
+    {
+      headers: { authorization },
+    }
+  );
 
-export { postLoginData, postSignupData };
+const removeBookmarkFromServer = (postId, authorization) =>
+  axios.post(
+    `/api/users/remove-bookmark/${postId}`,
+    {},
+    {
+      headers: { authorization },
+    }
+  );
+
+export {
+  postLoginData,
+  postSignupData,
+  editUser,
+  addBookmarkInServer,
+  removeBookmarkFromServer,
+};
