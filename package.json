@@ -7,6 +7,8 @@
     "@reduxjs/toolkit": "^1.8.5",
     "axios": "^0.27.2",
     "dayjs": "^1.11.5",
+    "flowbite": "^1.5.4",
+    "flowbite-react": "^0.3.5",
     "jwt-decode": "^3.1.2",
     "jwt-encode": "^1.0.1",
     "miragejs": "^0.1.45",
