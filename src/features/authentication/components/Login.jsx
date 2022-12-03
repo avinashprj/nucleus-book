@@ -52,13 +52,13 @@ export const Login = () => {
     e.preventDefault();
     if (e && e.target.id === "guest") {
       setLoginData({
-        username: "adarshbalika",
-        password: "adarshBalika123",
+        username: "avinashprj",
+        password: "Avinashprajapati914@",
       });
       dispatch(
         loginUser({
-          username: "adarshbalika",
-          password: "adarshBalika123",
+          username: "avinashprj",
+          password: "Avinashprajapati914@",
         })
       );
     } else if (
@@ -75,13 +75,13 @@ export const Login = () => {
       );
   };
   return (
-    <section className="bg-gray-50 min-h-screen flex items-center justify-center">
+    <section className="animate-gradient bg-gray-50 min-h-screen flex items-center justify-center">
       {/* login container */}
       <div className="bg-gray-100 flex rounded-2xl shadow-lg max-w-4xl p-5 items-center">
         {/* form */}
         <div className="md:w-1/2 px-8 md:px-16">
-          <h2 className="font-bold text-2xl text-primary">Login</h2>
-          <p className="text-xs mt-4 text-primary">
+          <h2 className="font-bold text-2xl text-dim-primary">Login</h2>
+          <p className="text-xs mt-4 text-dim-primary">
             If you are already a member, easily log in
           </p>
           <form noValidate action="true" className="flex flex-col gap-4">
@@ -142,7 +142,7 @@ export const Login = () => {
             <button
               type="button"
               onClick={loginHandler}
-              className="bg-primary rounded-xl text-white py-2 hover:scale-105 duration-300"
+              className="bg-dim-primary rounded-xl text-dim-white py-2 hover:scale-105 duration-300"
             >
               Login
             </button>
@@ -150,7 +150,7 @@ export const Login = () => {
               id="guest"
               type="button"
               onClick={loginHandler}
-              className="bg-primary rounded-xl text-white py-2 hover:scale-105 duration-300"
+              className="bg-dim-primary rounded-xl text-dim-white py-2 hover:scale-105 duration-300"
             >
               Log in as Guest
             </button>
@@ -162,20 +162,20 @@ export const Login = () => {
           </div>
           <button
             type="button"
-            className="bg-white border py-2 w-full rounded-xl mt-5 flex justify-center items-center text-sm hover:scale-105 duration-300 text-primary"
+            className="bg-dim-white border py-2 w-full rounded-xl mt-5 flex justify-center items-center text-sm hover:scale-105 duration-300 text-dim-primary"
           >
             <FcGoogle className="mr-3 text-[1.25rem]" />
             Login with Google
           </button>
-          <div className="mt-5 text-xs border-b border-primary py-4 text-primary">
+          <div className="mt-5 text-xs border-b border-dim-primary py-4 text-dim-primary">
             <a href="/">Forgot your password?</a>
           </div>
-          <div className="mt-3 text-xs flex justify-between items-center text-primary">
+          <div className="mt-3 text-xs flex justify-between items-center text-dim-primary">
             <p>Don't have an account?</p>
             <Link
               to="/signup"
               type="button"
-              className="py-2 px-5 bg-white border rounded-xl hover:scale-110 duration-300"
+              className="py-2 px-5 bg-dim-white border rounded-xl hover:scale-110 duration-300"
             >
               Register
             </Link>
@@ -185,7 +185,7 @@ export const Login = () => {
         <div className="md:block hidden w-1/2">
           <img
             className="rounded-2xl"
-            src="https://res.cloudinary.com/dwmd1yjww/image/upload/v1663515635/pexels-cottonbro-4629633_sir6nn.jpg"
+            src="https://res.cloudinary.com/avinashprj/image/upload/v1663515635/pexels-cottonbro-4629633_sir6nn.jpg"
             alt="social media"
           />
         </div>
