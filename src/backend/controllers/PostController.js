@@ -86,6 +86,7 @@ export const createPostHandler = function (schema, request) {
         likedBy: [],
         dislikedBy: [],
       },
+      comments: [],
       username: user.username,
       createdAt: formatDate(),
       updatedAt: formatDate(),
@@ -290,4 +291,22 @@ export const deletePostHandler = function (schema, request) {
       }
     );
   }
+};
+
+/**
+ * This handler handles gets all posts in the db.
+ * send GET Request at /api/posts/page/pageNum
+ * */
+//= >0,1,2,3
+// 1=>0,1,2,3,4,5,6,7
+// 2=>0, 1,2,3,4,5,6,7,8,9,10,11
+
+export const getLatestPagedPosts = function (schema, request) {
+  const { pageNum } = request.params;
+
+  const latestPosts = this.db.posts.sort(
+    (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
+  );
+  const paginatedPosts = latestPosts.slice(0, pageNum * 5 + 5);
+  return new Response(200, {}, { posts: paginatedPosts });
 };
