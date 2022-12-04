@@ -71,8 +71,7 @@ export const Post = ({ post }) => {
         <div className="border-b border-gray-200 dark:border-dim-200 hover:bg-gray-100 dark:hover:bg-dim-300 cursor-pointer transition duration-350 ease-in-out pb-4 border-l border-r">
           <div className="flex flex-shrink-0 p-4 pb-0">
             <Link
-              to={`profile/${post.username}`}
-              href="/"
+              to={`/profile/${post.username}`}
               className="flex-shrink-0 group block"
             >
               <div className="flex items-top">
