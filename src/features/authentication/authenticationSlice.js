@@ -54,11 +54,6 @@ export const addBookmark = createAsyncThunk(
   async ({ postId, authToken }, { rejectWithValue }) => {
     try {
       const resp = await addBookmarkInServer(postId, authToken);
-      console.log(
-        "🚀 ~ file: authenticationSlice.js ~ line 57 ~ resp",
-        resp.data
-      );
-
       return resp.data.bookmarks;
     } catch (error) {
       toast.error("Couldn't Add to Bookmarks.");
