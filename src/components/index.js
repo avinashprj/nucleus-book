@@ -1,3 +1,4 @@
 export { Navbar } from "./Navbar/Navbar";
-export { SharedLayout } from "./SharedLayout/SharedLayout";
+export { SharedLayout } from "./Shared/SharedLayout";
 export { Footer } from "./Footer/Footer";
+export { Header } from "./Header/Header";
