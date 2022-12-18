@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-expressions */
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useParams } from "react-router";
 import { useDispatch, useSelector } from "react-redux";
 import { CgWebsite } from "react-icons/cg";
@@ -11,6 +11,7 @@ import { logoutUser } from "../../authentication/authenticationSlice";
 import { FollowersModal } from "./FollowersModal";
 import { FollowingModal } from "./FollowingModal";
 import { Post } from "../../home/components/Post/Post";
+import { ProfileEditModal } from "./ProfileEditModal";
 
 export const ProfileDetails = () => {
   const { username } = useParams();
@@ -23,10 +24,6 @@ export const ProfileDetails = () => {
 
   useEffect(() => {
     if (username) {
-      console.log(
-        "🚀 ~ file: profileDetails.jsx:24 ~ useEffect ~ username",
-        username
-      );
       dispatch(loadUserDetails(username));
       dispatch(loadUserPosts(username));
     }
@@ -78,13 +75,7 @@ export const ProfileDetails = () => {
           </div>
           <div className="flex flex-col text-right justify-end">
             {authUser.username === profileDetails.username && (
-              <button
-                type="button"
-                onClick={() => dispatch(logoutUser())}
-                className="flex justify-center  max-h-max whitespace-nowrap focus:outline-none  focus:ring  max-w-max border bg-transparent border-blue-400 text-blue-400 hover:border-blue-500 hover:text-blue-500   items-center hover:shadow-lg font-bold py-2 px-4 rounded-full mr-0 ml-auto"
-              >
-                Edit Profile
-              </button>
+              <ProfileEditModal />
             )}
             {authUser.username !== profileDetails.username && (
               <button
